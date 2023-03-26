@@ -15,10 +15,12 @@ public class Person {
     private String lastName;
     @Column(name = "age")
     private Integer age;
+    @ManyToOne
+    @JoinColumn(name = "car_id")
+    private Car car;
 
-    public Person(){
+    public Person(){}
 
-    }
 
     public Person(String firstName, String lastName, Integer age) {
         this.firstName = firstName;
@@ -52,5 +54,13 @@ public class Person {
 
     public long getId() {
         return id;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 }
